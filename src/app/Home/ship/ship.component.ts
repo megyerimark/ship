@@ -5,6 +5,15 @@ import { ShipService } from 'src/app/Shared/ship.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
+
+// <!-- /*
+// * Author: Megyeri Márk Máté
+// * Copyright: 2023, Megyeri Márk Máté
+// * Group: Szoft V
+// * Date: 2023-04-19
+// * Github: https://github.com/megyerimark/
+// * Licenc: GNU GPL
+// */ -->
 @Component({
   selector: 'app-ship',
   templateUrl: './ship.component.html',
@@ -15,9 +24,13 @@ export class ShipComponent {
   form!:FormGroup;
   success!:any;
 
+  ships!:any;
+
 constructor(private ship:ShipService, private http:HttpClient,
   private formBuild:FormBuilder, private toastr:ToastrService){}
   ngOnInit(): void{
+
+    this.index();
     this.form = this.formBuild.group({
       id:['',Validators.required],
       name:['', Validators.required],
@@ -42,10 +55,23 @@ constructor(private ship:ShipService, private http:HttpClient,
         this.toastr.success('Sikeres hozzáastál egy új hajót :)');
         this.success= true;
 
+    
+
       },
       error:err=>{
         this.toastr.error("Hiba! A hajó felvétel sikertelen!")
         this.success= false;
+        this.index();
+      }
+    })
+  }
+
+
+  index(){
+    this.ship.index().subscribe({
+      next:res=>{
+        this.ships = res;
+    
       }
     })
   }

@@ -1,1 +1,32 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid" [ngClass]="{ 'show-nav': showNav }">
+    <a class="navbar-brand" routerLink="">Ship</a>
+    <button class="navbar-toggler" type="button" (click)="home()" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav" [ngClass]="{'show':homer}">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/ship" >Ships</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
 <router-outlet></router-outlet>
+
+<!-- /*
+* File: App.component.html
+* Author: Megyeri Márk Máté
+* Copyright: 2023, Megyeri Márk Máté
+* Group: Szoft V
+* Date: 2023-04-19
+* Github: https://github.com/megyerimark/
+* Licenc: GNU GPL
+*/ -->

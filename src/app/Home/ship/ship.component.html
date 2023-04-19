@@ -9,7 +9,38 @@
 
 
     <div class="button mb-3 text-center">
-        <button id="button" class="btn btn-info"  type="submit">Felvétel</button>
+        <button id="button" class="btn btn-info pt-4"  type="submit">Felvétel</button>
       </div>
 
 </form>
+<!-- /*
+    // * Author: Megyeri Márk Máté
+    // * Copyright: 2023, Megyeri Márk Máté
+    // * Group: Szoft V
+    // * Date: 2023-04-19
+    // * Github: https://github.com/megyerimark/
+    // * Licenc: GNU GPL
+    // */ -->
+
+    
+
+  
+  <table class="table">
+    <thead>
+        <th scope="col">Név</th>
+        <th scope="col">Hossz</th>
+        <th scope="col">Ár</th>
+        <th scope="col">személyzet</th>
+        <th scope="col">személyzet</th>
+    </thead>
+    <tbody >
+      <tr *ngFor = 'let ship of ships'>
+        <th scope="row">{{ship.name}}</th>
+        <th scope="row">{{ship.length}}</th>
+        <th scope="row">{{ship.price}}</th>
+        <th scope="row">{{ship.person}}</th>
+        <th scope="row">{{ship.trailer}}</th>
+      
+      </tr>
+    </tbody>
+  </table>

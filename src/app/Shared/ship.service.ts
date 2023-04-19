@@ -1,7 +1,14 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Route, Router } from '@angular/router';
-
+// <!-- /*
+// * Author: Megyeri Márk Máté
+// * Copyright: 2023, Megyeri Márk Máté
+// * Group: Szoft V
+// * Date: 2023-04-19
+// * Github: https://github.com/megyerimark/
+// * Licenc: GNU GPL
+// */ -->
 @Injectable({
   providedIn: 'root'
 })
