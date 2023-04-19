@@ -12,10 +12,24 @@ export class ShipService {
 
   host =  'http://localhost:8000/ships';
 
-addShip(name:string, length:string,price:any,person:any,trailer:string)
+
+
+  index(){
+    let headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+    });
+    let httpOption = {
+      headers: headers
+    };
+    return this.http.get<any>(this.host , httpOption);
+
+
+  }
+addShip(id:any,name:string, length:string,price:any,person:any,trailer:string)
  {
 
   let shipData={
+    id:id,
     name:name,
     length:length,
     price:price,
@@ -28,8 +42,8 @@ addShip(name:string, length:string,price:any,person:any,trailer:string)
   let httpOption = {
     headers:headers
   }
-  let url = this.host;
-  return this.http.post<any>(url,shipData,httpOption);
+
+  return this.http.post<any>(this.host,shipData,httpOption);
 
  }
 

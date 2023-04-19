@@ -1,8 +1,15 @@
-<form action="" > 
+<form  [formGroup]="form" (ngSubmit)="addShip()"> 
 
-    <input type="text"  formControlName="name">
+    <input type="text"  placeholder="id" formControlName="name" class="form-control" >
+    <input type="text"  placeholder="hajó név" formControlName="id" class="form-control" >
+    <input type="text"  placeholder="hajó hossz" formControlName="length" class="form-control" >
+    <input type="text"   placeholder="hajó ár" formControlName="price" class="form-control" >
+    <input type="text"   placeholder="személyzet" formControlName="person" class="form-control" >
+    <input type="text"   placeholder="##" formControlName="trailer" class="form-control" >
 
 
-
+    <div class="button mb-3 text-center">
+        <button id="button" class="btn btn-info"  type="submit">Felvétel</button>
+      </div>
 
 </form>
